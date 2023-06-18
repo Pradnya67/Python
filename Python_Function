@@ -1,0 +1,114 @@
+#FUNCTION IN PYTHON
+#There are in-built as well as user-defined functions in python.
+
+#Creating a function
+def name(): #here def is defination , name is function name followed by empty parantheses and colon
+    print("I am happy!!!")
+name()   #Here function is called 
+
+# Example for Function in python which does not take any argument  and does not return anything 
+def function_name():
+    print("My name is pradnya")
+function_name()
+
+#Example for function which doesn't take any parameter and does return something
+def function_name():
+    return "Pradnya"
+print(function_name())
+
+#Difference b/w print() and return functions?
+#Ans--> Here print() gives the output with 'nonetype' datatype and return gives the output with 
+# primitive datatype so we can easily perform any operations further
+
+
+# POSITIONAL ARGUMENTS: Here we can pass parameter in the empty paranthesis which takes argument with 
+#respect to the position
+#It is shortened as 'args'
+def fghd(ask):
+    print("Ask me anything",ask)
+fghd("shreyu")
+
+#Multiple Arguments : here name is parameter and we can even pass multiple arguments
+def message(name,nick):
+    print("Hello",name)       #body of the function
+    print("Welcome to Pragati Computers",nick)
+message("preeti","pankaj")
+
+#Example: To calculate sum of two numbers by passing multiple arguments in the function
+def sum_num(n1,n2):
+    result= n1 + n2
+    print(result)
+sum_num(22,23)
+
+# Example: create a function for average marks and grade of a student from the given list of marks 
+def average_marks(marks):
+    sum_marks = sum(marks)
+    subject_no = len(marks)
+    avg_no = sum_marks/subject_no
+    return avg_no
+
+def grade_marks(marks):
+    if avg_no>=80:
+        grade='A'
+    elif avg_no>=60:
+        grade='B'
+    elif avg_no>=50:
+        grade='C'
+    else:
+        grade='D'
+    return grade
+marks=[55,64,75,80,65]
+avg_no = average_marks(marks)
+print("The average marks is",avg_no)
+
+grade = grade_marks(marks)
+print("The grade is",grade)
+
+#Example: Write a function to add and multiply two numbers
+
+#Add two numbers
+def add_numbers(n1,n2):
+    add_no = n1 +n2
+    return add_no
+
+#multiply two numbers
+def multiply_numbers(n1,n2):
+    multi_no = n1* n2
+    return multi_no
+
+add_no = add_numbers(2, 2)
+print("The addition of two no's:",add_no)
+
+multi_no = multiply_numbers(2,2)
+print("The multiplication of number is:",multi_no)
+
+
+#ARBITARY ARGUMENTS is used when we don't know how many arguments to pass in the function, so here
+# we write '*' before parameter. It receives arguments as tuple. It is shortened as '*args'.
+def kittens(*babies):
+    print("Name of kittens are:",babies)
+kittens("Chinnya","Dummi","Pillya")
+
+    
+#KEYWORD ARGUMENT is used to write arguments in the key=value syntax. 
+#Here we can change the position of arguments  with respect to the parameter, once the values are 
+#assigned to the keys i.e the order of the argument does not matter
+#it is shortened as 'kwargs'
+def party(chinmi,vastra,uta):
+    print("The most underrated is",chinmi)
+party(chinmi="dabaluu",uta ="nasta",vastra ="dhotra")   
+
+
+# ARBITARY KEYWORD ARGUMENT is used when we don't know how many keyword arguments to pass in a function.
+# It receives the arguments as dictionary. It is shortened as '**kwargs'
+def sheyii(**dum):
+    print("name of sheyii is:",dum)
+sheyii(dum="dhaba",fname="Shreya",lname="Sutar")
+
+
+#DEFAULT ARGUMENT: When the argument is not provided for any parameter then the default argument provided
+# along with the parameter is used.
+
+def city_name(name='Kolhapur'):   #Here kolhapur is default argument
+    print("I love ",name)
+city_name()  # Here no argument is passed 
